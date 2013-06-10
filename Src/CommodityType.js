@@ -1,0 +1,46 @@
+var CommodityType = [
+{
+    type:0,
+    textureName:"can.png",
+    HP:1,
+    locked:true,
+    manaCost:5,
+},
+{
+    type:1,
+    textureName:"clothes.png",
+    HP:1,
+    locked:true,
+    manaCost:10,
+},
+
+{
+    type:2,
+    textureName:"phone.png",
+    HP:1,
+    locked:true,
+    manaCost:50,
+},
+{
+    type:3,
+    textureName:"tele.png",
+    HP:1,
+    locked:true,
+    manaCost:100,
+},
+{
+    type:4,
+    textureName:"car.png",
+    HP:1,
+    locked:true,
+    manaCost:500,
+},
+{
+    type:5,
+    textureName:"diamond.png",
+    HP:1,
+    locked:true,
+    manaCost:1000,
+},
+];
+

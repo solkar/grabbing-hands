@@ -1,0 +1,62 @@
+var EnemyType = [
+    {
+        //Homeless guy
+        type:0,
+        textureName:"hobo.png",
+        bulletType:"W2.png",
+        HP:1,
+        moveType:GH.ENEMY_MOVE_TYPE.ATTACK,
+        attackMode:GH.ENEMY_MOVE_TYPE.NORMAL,
+        scoreValue:15
+    },
+    {
+        //working class
+        type:1,
+        textureName:"E1.png",
+        bulletType:"W2.png",
+        HP:2,
+        moveType:GH.ENEMY_MOVE_TYPE.ATTACK,
+        attackMode:GH.ENEMY_MOVE_TYPE.NORMAL,
+        scoreValue:40
+    },
+    {
+        //mid-high class
+        type:2,
+        textureName:"E2.png",
+        bulletType:"W2.png",
+        HP:4,
+        moveType:GH.ENEMY_MOVE_TYPE.HORIZONTAL,
+        attackMode:GH.ENEMY_ATTACK_MODE.TSUIHIKIDAN,
+        scoreValue:60
+    },
+    {
+        //high class
+        type:3,
+        textureName:"E3.png",
+        bulletType:"W2.png",
+        HP:6,
+        moveType:GH.ENEMY_MOVE_TYPE.OVERLAP,
+        attackMode:GH.ENEMY_MOVE_TYPE.NORMAL,
+        scoreValue:80
+    },
+    {
+        //rich
+        type:4,
+        textureName:"E4.png",
+        bulletType:"W2.png",
+        HP:10,
+        moveType:GH.ENEMY_MOVE_TYPE.HORIZONTAL,
+        attackMode:GH.ENEMY_ATTACK_MODE.TSUIHIKIDAN,
+        scoreValue:150
+    },
+    {
+        //super-rich
+        type:5,
+        textureName:"E5.png",
+        bulletType:"W2.png",
+        HP:15,
+        moveType:GH.ENEMY_MOVE_TYPE.HORIZONTAL,
+        attackMode:GH.ENEMY_MOVE_TYPE.NORMAL,
+        scoreValue:200
+    }
+];
