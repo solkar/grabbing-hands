@@ -23,13 +23,14 @@ var Hobo = cc.Sprite.extend({
 
         this.initWithSpriteFrameName(arg.textureName);
 
+        // deprecated: use movement component
         //Start moving around
-        var range = (cc.RANDOM_MINUS1_1()*0.75 + 2.5) * this.getContentSize().width;
-        var actionMove = cc.MoveBy.create( 4.0, cc.p(range, 0)); 
-        var sequence = cc.Sequence.create(actionMove,
-                actionMove.reverse());
-        var movementLoop = cc.RepeatForever.create(sequence);
-        this.runAction(movementLoop);
+        //var range = (cc.RANDOM_MINUS1_1()*0.75 + 2.5) * this.getContentSize().width;
+        //var actionMove = cc.MoveBy.create( 4.0, cc.p(range, 0)); 
+        //var sequence = cc.Sequence.create(actionMove,
+                //actionMove.reverse());
+        //var movementLoop = cc.RepeatForever.create(sequence);
+        //this.runAction(movementLoop);
     },
     collideRect:function(p){
         var a = this.getContentSize();
@@ -117,6 +118,46 @@ var Hobo = cc.Sprite.extend({
              return false;
          }
      },
+
+    // movement component
+    targetPosition: null,
+    seekRange: 140,
+    updatePosition: function( dt, position ) {
+        
+        // save target position
+        this.targetPosition = position;
+
+        // calc distance to target
+        var position = this.getPosition();
+        var distance = Math.abs( this.targetPosition.x - position.x ); 
+
+        if( distance < this.seekRange ) {
+            console.log( "[MovComp]distance:" + distance );
+
+            // dummy: change color
+            this.setColor( cc.c3b(255,0,0) );
+
+            // enable seek
+            
+        } else {
+
+            // dummy: restore original color
+            this.setColor( cc.c3b(255,255,255) );
+
+            // enable wander
+        }
+
+    },
+
+    // steering behaviors
+    seek: function( deltaTime, targetPosition ) {
+
+    },
+    wander: function( deltaTime, targetPosition ) {
+
+    },
+
+
 });//end class
 
 Hobo.getOrCreateHobo = function(arg) {

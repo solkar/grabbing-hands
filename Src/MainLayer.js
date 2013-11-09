@@ -117,6 +117,7 @@ var MainLayer = cc.LayerColor.extend({
     },
     update:function (dt) {
         if( this._state == STATE_PLAYING ) {
+            this.updatePosition(dt);
             this.checkIsCollide();
             this.removeInactiveUnit(dt);
             this.checkIsReborn();
@@ -130,6 +131,15 @@ var MainLayer = cc.LayerColor.extend({
         g_sharedHudLayer.updateSpellLockIcons();
     },
     
+    // control the position of enemies, run steering behaviors
+    updatePosition:function( dt ) {
+        for (i = 0; i < GH.CONTAINER.ENEMIES.length; i++) {
+            var movementComponent = GH.CONTAINER.ENEMIES[i];
+
+            movementComponent.updatePosition( dt, this._player.getPosition() );
+        }
+    },
+
     /* Collision system */
     checkIsCollide:function () {
         var selChild, bulletChild;
