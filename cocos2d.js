@@ -16,8 +16,8 @@ var GH = GH || {}; //sort of singleton
     appFiles:[
     './Src/resource.js',
     './Src/config/GameConfig.js',
-    './Src/MainLayer.js',
     './Src/main.js',
+    './Src/MainLayer.js',
     './Src/banker.js',
     './Src/Hobo.js',
     './Src/Commodity.js',
